@@ -26,5 +26,6 @@ func _check_grabbed_object():
 			spot_light.visible=false
 			omni_light.visible=true
 			tv.appear()
-		if grabbed_object==tv and tv.is_anim_finished():
+			crank_pressed=true
+		elif grabbed_object==tv and tv.is_anim_finished():
 			print("MAYOR")

@@ -9,12 +9,12 @@ background_color = Color(0.63204294, 0.7789046, 0.90180504, 1)
 
 [node name="MinijuegoIman" type="Node3D" unique_id=1266419544]
 
-[node name="Imán" parent="." unique_id=1802442652 instance=ExtResource("1_wbtbj")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.23318005, 0, -0.3444729)
-script = ExtResource("2_d2no7")
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="Imán" unique_id=291379451]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=291379451]
 environment = SubResource("Environment_d2no7")
 
-[node name="Camera3D" type="Camera3D" parent="Imán" unique_id=663984226]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -10.252577, 0, -0.2331805)
+[node name="Camera3D" type="Camera3D" parent="." unique_id=663984226]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -4.4817287e-07, 0, -10.597)
+
+[node name="Imán" parent="." unique_id=1802442652 instance=ExtResource("1_wbtbj")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -0.344)
+script = ExtResource("2_d2no7")

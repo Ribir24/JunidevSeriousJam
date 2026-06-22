@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bw2q7qox8lovf"]
+
+[ext_resource type="Script" uid="uid://bv2u0i17ovogj" path="res://Scenes/autoloads/interact_manager.gd" id="1_a6c50"]
+
+[node name="Interact_Manager" type="Node3D" unique_id=1524119177]
+script = ExtResource("1_a6c50")

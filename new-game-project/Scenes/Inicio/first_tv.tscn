@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bahchmg6jv6tg"]
+
+[ext_resource type="Script" uid="uid://cina4yvn05ovg" path="res://Scenes/Inicio/first_tv.gd" id="1_7kxh6"]
+
+[node name="FirstTV" type="Node3D" unique_id=1342482313 node_paths=PackedStringArray("anim_player")]
+script = ExtResource("1_7kxh6")
+anim_player = NodePath("")

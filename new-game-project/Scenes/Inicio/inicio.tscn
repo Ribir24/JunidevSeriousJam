@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://c2r0dtsrhgdub"]
 
+[ext_resource type="Script" uid="uid://bmjc8iqxv17il" path="res://Scenes/Inicio/inicio.gd" id="1_6bxyb"]
 [ext_resource type="PackedScene" uid="uid://b2osx7aq0pasb" path="res://Scenes/Inicio/habitacion.tscn" id="1_notyv"]
+[ext_resource type="PackedScene" uid="uid://csuw0idw1jim6" path="res://Scenes/Inicio/manivela.tscn" id="3_dg7ge"]
+[ext_resource type="PackedScene" uid="uid://bahchmg6jv6tg" path="res://Scenes/Inicio/first_tv.tscn" id="4_jglie"]
 
 [sub_resource type="Environment" id="Environment_6amc0"]
 background_energy_multiplier = 0.0
@@ -8,10 +11,15 @@ ambient_light_source = 1
 ambient_light_energy = 0.0
 reflected_light_source = 1
 
-[node name="Inicio" type="Node3D" unique_id=1999856992]
+[node name="Inicio" type="Node3D" unique_id=1999856992 node_paths=PackedStringArray("crank", "tv", "spot_light", "omni_light")]
+script = ExtResource("1_6bxyb")
+crank = NodePath("Manivela")
+tv = NodePath("FirstTV")
+spot_light = NodePath("SpotLight3D")
+omni_light = NodePath("OmniLight3D")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1997417034]
-transform = Transform3D(0.97172916, 0, 0.23609847, 0, 1, 0, -0.23609847, 0, 0.9717291, -0.8479004, 3, 0)
+transform = Transform3D(0.60325027, -0.23589346, 0.76186836, -0.063405424, 0.93805045, 0.3406485, -0.7950276, -0.2538028, 0.5509222, 3.7913818, 5.4329834, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=961619603]
 environment = SubResource("Environment_6amc0")
@@ -19,6 +27,20 @@ environment = SubResource("Environment_6amc0")
 [node name="Habitacion" parent="." unique_id=1931690125 instance=ExtResource("1_notyv")]
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=698241786]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -4.8485107, 3.661377, -5)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -3.4776, 7.0859985, -5)
 light_energy = 16.0
 light_size = 1.0
+spot_range = 20.0
+spot_attenuation = 1.4
+
+[node name="Manivela" parent="." unique_id=2042717707 instance=ExtResource("3_dg7ge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.43573, 2.2423096, -5.9799805)
+
+[node name="FirstTV" parent="." unique_id=1342482313 instance=ExtResource("4_jglie")]
+transform = Transform3D(0.39955282, -0.010080381, -0.3004261, 0.018335527, 0.49960548, 0.00762189, 0.30003545, -0.017107656, 0.3996073, 1.2565765, 0.631073, -1.144043)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=36316635]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.031769, 17, 24.23169)
+visible = false
+omni_range = 4096.0
+omni_attenuation = 0.248

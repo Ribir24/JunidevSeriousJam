@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dj16tjgxwcif0"]
+
+[ext_resource type="PackedScene" uid="uid://btuvt4sk3umc4" path="res://Modelos/Tierra.glb" id="1_bvfkb"]
+[ext_resource type="Script" uid="uid://bc57x5xhoj8gx" path="res://Script/Roca.gd" id="2_rh1ua"]
+
+[node name="Roc" type="Node3D" unique_id=199478800]
+
+[node name="a" parent="." unique_id=2045177209 instance=ExtResource("1_bvfkb")]
+transform = Transform3D(-0.18776363, 0, 0.3365954, 0, 0.11551822, 0, -4.7430363, 0, -0.013324878, 6.057914, -12.648153, -6.955847)
+script = ExtResource("2_rh1ua")
+speed = 3.75

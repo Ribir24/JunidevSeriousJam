@@ -2,10 +2,18 @@
 
 [ext_resource type="PackedScene" uid="uid://msf7exqtwddv" path="res://Modelos/Imán.glb" id="1_wbtbj"]
 [ext_resource type="Script" uid="uid://b7m45xtbnj8f5" path="res://Modelos/imán.gd" id="2_d2no7"]
+[ext_resource type="PackedScene" uid="uid://ckphsxewr3sdi" path="res://Modelos/Cuerda.glb" id="2_ohoov"]
+[ext_resource type="PackedScene" uid="uid://btuvt4sk3umc4" path="res://Modelos/Tierra.glb" id="4_h2c04"]
+[ext_resource type="Script" uid="uid://x6qsrkd88l6s" path="res://Scripts/generadorRocas.gd" id="6_if162"]
+[ext_resource type="PackedScene" uid="uid://dj16tjgxwcif0" path="res://Scenes/roc.tscn" id="7_ihux1"]
 
 [sub_resource type="Environment" id="Environment_d2no7"]
 background_mode = 1
-background_color = Color(0.63204294, 0.7789046, 0.90180504, 1)
+background_color = Color(0.022622004, 0.067564964, 0.10613237, 1)
+background_energy_multiplier = 2.49
+ambient_light_color = Color(0.4162678, 0.16345695, 0.15818492, 1)
+ambient_light_energy = 14.1
+reflected_light_source = 2
 
 [node name="MinijuegoIman" type="Node3D" unique_id=1266419544]
 
@@ -13,8 +21,30 @@ background_color = Color(0.63204294, 0.7789046, 0.90180504, 1)
 environment = SubResource("Environment_d2no7")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=663984226]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -4.4817287e-07, 0, -10.597)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -4.4817287e-07, 0, -13.138406)
 
-[node name="Imán" parent="." unique_id=1802442652 instance=ExtResource("1_wbtbj")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -0.344)
+[node name="Node3D" type="Node3D" parent="." unique_id=947430939]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.540038, 0)
 script = ExtResource("2_d2no7")
+
+[node name="Cuerda" parent="Node3D" unique_id=1683127015 instance=ExtResource("2_ohoov")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5712368, 0, 2.806724)
+
+[node name="Imán" parent="Node3D" unique_id=1802442652 instance=ExtResource("1_wbtbj")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=946535633]
+transform = Transform3D(1, 0, 0, 0, -0.7659434, -0.642908, 0, 0.642908, -0.7659434, 0, 0, -7.2723556)
+
+[node name="Tierra2" parent="." unique_id=2045177209 instance=ExtResource("4_h2c04")]
+transform = Transform3D(-4.3836646e-08, 0, 1.0028656, 0, 3.9277318, 0, -1.0028656, 0, -4.3836646e-08, -19.526764, -25.345724, 2.329)
+
+[node name="Tierra3" parent="." unique_id=2027172086 instance=ExtResource("4_h2c04")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 3.824822, 0, -1, 0, -4.371139e-08, 25.13119, -22.836332, 2.3294926)
+
+[node name="Generador" type="Node3D" parent="." unique_id=1082883382]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.8070164, 0)
+script = ExtResource("6_if162")
+rock_scene = ExtResource("7_ihux1")
+spawn_interval = 2.5
+min_x = -17.0

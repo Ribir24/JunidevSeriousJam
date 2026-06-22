@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://chfix4ie8uugr"]
+
+[ext_resource type="Script" uid="uid://bjs0a744epd7w" path="res://Scenes/examen/examen.gd" id="1_i6iwv"]
+[ext_resource type="PackedScene" uid="uid://67ey5ixmlxxl" path="res://Modelos/Papel.glb" id="2_p30ld"]
+[ext_resource type="PackedScene" uid="uid://bw81bk38f6ln5" path="res://Scenes/examen/casilla.tscn" id="3_2y05t"]
+
+[sub_resource type="Environment" id="Environment_f3yew"]
+background_mode = 1
+background_color = Color(0.63204294, 0.7789046, 0.90180504, 1)
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 16.0
+
+[node name="Examen" type="Node3D" unique_id=224691122]
+script = ExtResource("1_i6iwv")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=978674741]
+environment = SubResource("Environment_f3yew")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1982128341]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+projection = 1
+
+[node name="Papel" parent="." unique_id=802967984 instance=ExtResource("2_p30ld")]
+transform = Transform3D(-1.3113416e-08, 0, 0.29999998, 0, 0.29999998, 0, -0.29999998, 0, -1.3113416e-08, 1.7023315, -4.208069, -0.17771912)
+
+[node name="Pregunta1" type="Node3D" parent="." unique_id=1009054834]
+
+[node name="Casilla" parent="Pregunta1" unique_id=497751733 instance=ExtResource("3_2y05t")]
+transform = Transform3D(-4.371139e-09, 0, 0.1, 0, 0.1, 0, -0.1, 0, -4.371139e-09, -0.63638115, -0.29684448, 0.13024902)
+
+[node name="Casilla2" parent="Pregunta1" unique_id=1083093003 instance=ExtResource("3_2y05t")]
+transform = Transform3D(-4.371139e-09, 0, 0.1, 0, 0.1, 0, -0.1, 0, -4.371139e-09, -0.077451706, -0.29684448, 0.13024902)
+
+[node name="Casilla3" parent="Pregunta1" unique_id=46759727 instance=ExtResource("3_2y05t")]
+transform = Transform3D(-4.371139e-09, 0, 0.1, 0, 0.1, 0, -0.1, 0, -4.371139e-09, 0.48631096, -0.29684448, 0.13024902)

@@ -23,9 +23,12 @@ InteractManager="*uid://bv2u0i17ovogj"
 [dialogic]
 
 directories/dch_directory={
+"mayor": "res://Characters/mayor.dch",
 "unit_test_character": "res://Tests/Resources/unit_test_character.dch"
 }
-directories/dtl_directory={}
+directories/dtl_directory={
+"mayor_timeline": "res://Timelines/mayor_timeline.dtl"
+}
 layout/style_directory={}
 glossary/default_case_sensitive=true
 variables={}

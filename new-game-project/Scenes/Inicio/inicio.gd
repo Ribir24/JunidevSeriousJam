@@ -5,6 +5,7 @@ var mouse:Vector2
 var grabbed_object:Node3D=null
 
 var crank_pressed:bool=false
+var tv_pressed:bool=false
 
 @export var crank:Node3D
 @export var tv:FirstTV
@@ -12,6 +13,10 @@ var crank_pressed:bool=false
 @export var spot_light:SpotLight3D
 @export var omni_light:OmniLight3D
 
+var dialog_number:int=0
+
+func _ready() -> void:
+	Dialogic.timeline_ended.connect(_on_timeline_end)
 
 func _input(event):
 	if event is InputEventMouseMotion:
@@ -27,5 +32,11 @@ func _check_grabbed_object():
 			omni_light.visible=true
 			tv.appear()
 			crank_pressed=true
-		elif grabbed_object==tv and tv.is_anim_finished():
-			print("MAYOR")
+		elif not tv_pressed and grabbed_object==tv and tv.is_anim_finished():
+			tv_pressed=true
+			dialog_number+=1
+			Dialogic.start("mayor_timeline")
+
+func _on_timeline_end():
+	if dialog_number==1:
+		print("POZO")

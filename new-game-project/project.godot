@@ -1,3 +1,11 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
 config_version=5
 
 [application]
@@ -15,14 +23,20 @@ InteractManager="*uid://bv2u0i17ovogj"
 [dialogic]
 
 directories/dch_directory={
+"mayor": "res://Characters/mayor.dch",
 "unit_test_character": "res://Tests/Resources/unit_test_character.dch"
 }
-directories/dtl_directory={}
-layout/style_directory={}
+directories/dtl_directory={
+"mayor_timeline": "res://Timelines/mayor_timeline.dtl"
+}
+layout/style_directory={
+"": "res://Dialogic_Styles/plastilina_style_3.tres",
+"plastilina_style_3": "res://Dialogic_Styles/plastilina_style_3.tres"
+}
 glossary/default_case_sensitive=true
 variables={}
-layout/style_list=[]
-layout/default_style="Default"
+layout/style_list=["res://Dialogic_Styles/plastilina_style_3.tres"]
+layout/default_style="res://Dialogic_Styles/plastilina_style_3.tres"
 
 [editor_plugins]
 

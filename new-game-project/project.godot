@@ -29,11 +29,14 @@ directories/dch_directory={
 directories/dtl_directory={
 "mayor_timeline": "res://Timelines/mayor_timeline.dtl"
 }
-layout/style_directory={}
+layout/style_directory={
+"": "res://Dialogic_Styles/plastilina_style_3.tres",
+"plastilina_style_3": "res://Dialogic_Styles/plastilina_style_3.tres"
+}
 glossary/default_case_sensitive=true
 variables={}
-layout/style_list=[]
-layout/default_style="Default"
+layout/style_list=["res://Dialogic_Styles/plastilina_style_3.tres"]
+layout/default_style="res://Dialogic_Styles/plastilina_style_3.tres"
 
 [editor_plugins]
 

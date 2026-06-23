@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="DialogicStyle" format=3 uid="uid://msoc80m8xq2w"]
+
+[ext_resource type="PackedScene" uid="uid://ccgm8us6oconk" path="res://Dialogic_Styles/CustomPlastilinaStyle2/custom_plastilina_style_2.tscn" id="1_wp8xi"]
+[ext_resource type="Script" uid="uid://bwg6yncmh2cml" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="2_n3wqf"]
+[ext_resource type="Script" uid="uid://dv08k6ljua6fm" path="res://addons/dialogic/Resources/dialogic_style.gd" id="11_5q4vs"]
+
+[sub_resource type="Resource" id="Resource_tm1f7"]
+script = ExtResource("2_n3wqf")
+scene = ExtResource("1_wp8xi")
+
+[resource]
+script = ExtResource("11_5q4vs")
+name = "plastilina_style 2"
+layer_info = {
+"": SubResource("Resource_tm1f7")
+}
+metadata/_latest_layer = ""

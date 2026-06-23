@@ -2,7 +2,9 @@
 
 [ext_resource type="Script" uid="uid://bjs0a744epd7w" path="res://Scenes/examen/examen.gd" id="1_i6iwv"]
 [ext_resource type="PackedScene" uid="uid://67ey5ixmlxxl" path="res://Modelos/Papel.glb" id="2_p30ld"]
+[ext_resource type="PackedScene" uid="uid://cqh156nmi6cmg" path="res://Modelos/questions.glb" id="3_1j6yt"]
 [ext_resource type="PackedScene" uid="uid://bw81bk38f6ln5" path="res://Scenes/examen/casilla.tscn" id="3_2y05t"]
+[ext_resource type="FontFile" uid="uid://brc2eh1mdyxp3" path="res://Font/Clayfont-Regular.ttf" id="5_ak8h4"]
 
 [sub_resource type="Environment" id="Environment_f3yew"]
 background_mode = 1
@@ -10,29 +12,110 @@ background_color = Color(0.63204294, 0.7789046, 0.90180504, 1)
 ambient_light_color = Color(1, 1, 1, 1)
 ambient_light_energy = 16.0
 
-[node name="Examen" type="Node3D" unique_id=224691122]
+[node name="Examen" type="Node3D" unique_id=224691122 node_paths=PackedStringArray("button_up", "button_down", "button_finish", "camera")]
 script = ExtResource("1_i6iwv")
+lower_limit = -8.2
+button_up = NodePath("CanvasLayer/ButtonUp")
+button_down = NodePath("CanvasLayer/ButtonDown")
+button_finish = NodePath("CanvasLayer/FinishButton")
+camera = NodePath("Camera3D")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=978674741]
 environment = SubResource("Environment_f3yew")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1982128341]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.948, 0, 2.78)
 projection = 1
+size = 3.0
 
 [node name="Papel" parent="." unique_id=802967984 instance=ExtResource("2_p30ld")]
-transform = Transform3D(-1.3113416e-08, 0, 0.29999998, 0, 0.29999998, 0, -0.29999998, 0, -1.3113416e-08, 1.7023315, -4.208069, -0.17771912)
+transform = Transform3D(-1.3113417e-08, 0, 0.47222382, 0, 1.149, 0, -0.3, 0, -2.064156e-08, 3.5096822, -13.255765, -0.32746935)
+
+[node name="questions" parent="." unique_id=1578088544 instance=ExtResource("3_1j6yt")]
+transform = Transform3D(-8.742278e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.742278e-09, -1.1701317, -9.683975, 0.032152414)
 
 [node name="Pregunta1" type="Node3D" parent="." unique_id=1009054834]
 
 [node name="Casilla" parent="Pregunta1" unique_id=497751733 instance=ExtResource("3_2y05t")]
-transform = Transform3D(-4.371139e-09, 0, 0.1, 0, 0.1, 0, -0.1, 0, -4.371139e-09, -0.63638115, -0.29684448, 0.13024902)
+transform = Transform3D(-2.1855695e-09, 0, 0.05, 0, 0.05, 0, -0.05, 0, -2.1855695e-09, -1.0023308, 0.31555098, 0.13024902)
 
 [node name="Casilla2" parent="Pregunta1" unique_id=1083093003 instance=ExtResource("3_2y05t")]
-transform = Transform3D(-4.371139e-09, 0, 0.1, 0, 0.1, 0, -0.1, 0, -4.371139e-09, -0.077451706, -0.29684448, 0.13024902)
+transform = Transform3D(-2.1855695e-09, 0, 0.05, 0, 0.05, 0, -0.05, 0, -2.1855695e-09, -1.0062633, 0.023619711, 0.13024902)
 
 [node name="Casilla3" parent="Pregunta1" unique_id=46759727 instance=ExtResource("3_2y05t")]
-transform = Transform3D(-4.371139e-09, 0, 0.1, 0, 0.1, 0, -0.1, 0, -4.371139e-09, 0.48631096, -0.29684448, 0.13024902)
+transform = Transform3D(-2.1855695e-09, 0, 0.05, 0, 0.05, 0, -0.05, 0, -2.1855695e-09, -1.0002916, -0.25876194, 0.13024902)
+
+[node name="Pregunta2" type="Node3D" parent="." unique_id=370041270]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1783447, 0)
+
+[node name="Casilla" parent="Pregunta2" unique_id=701078764 instance=ExtResource("3_2y05t")]
+transform = Transform3D(-2.1855695e-09, 0, 0.05, 0, 0.05, 0, -0.05, 0, -2.1855695e-09, -1.0023308, 0.35829246, 0.13024902)
+
+[node name="Casilla2" parent="Pregunta2" unique_id=497976201 instance=ExtResource("3_2y05t")]
+transform = Transform3D(-2.1855695e-09, 0, 0.05, 0, 0.05, 0, -0.05, 0, -2.1855695e-09, -1.0062633, 0.0065231323, 0.13024902)
+
+[node name="Casilla3" parent="Pregunta2" unique_id=1229676853 instance=ExtResource("3_2y05t")]
+transform = Transform3D(-2.1855695e-09, 0, 0.05, 0, 0.05, 0, -0.05, 0, -2.1855695e-09, -1.0002916, -0.37843812, 0.13024902)
+
+[node name="Pregunta3" type="Node3D" parent="." unique_id=339357512]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.9453764, 0)
+
+[node name="Casilla" parent="Pregunta3" unique_id=265528416 instance=ExtResource("3_2y05t")]
+transform = Transform3D(-2.1855695e-09, 0, 0.05, 0, 0.05, 0, -0.05, 0, -2.1855695e-09, -1.0023308, 0.35829246, 0.13024902)
+
+[node name="Casilla2" parent="Pregunta3" unique_id=1606518249 instance=ExtResource("3_2y05t")]
+transform = Transform3D(-2.1855695e-09, 0, 0.05, 0, 0.05, 0, -0.05, 0, -2.1855695e-09, -1.0062633, 0.0065231323, 0.13024902)
+
+[node name="Casilla3" parent="Pregunta3" unique_id=616252588 instance=ExtResource("3_2y05t")]
+transform = Transform3D(-2.1855695e-09, 0, 0.05, 0, 0.05, 0, -0.05, 0, -2.1855695e-09, -1.0002916, -0.37843812, 0.13024902)
+
+[node name="Pregunta4" type="Node3D" parent="." unique_id=701140869]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.368667, 0)
+
+[node name="Casilla" parent="Pregunta4" unique_id=1454128281 instance=ExtResource("3_2y05t")]
+transform = Transform3D(-2.1855695e-09, 0, 0.05, 0, 0.05, 0, -0.05, 0, -2.1855695e-09, -1.0023308, 0.35829246, 0.13024902)
+
+[node name="Casilla2" parent="Pregunta4" unique_id=1087567212 instance=ExtResource("3_2y05t")]
+transform = Transform3D(-2.1855695e-09, 0, 0.05, 0, 0.05, 0, -0.05, 0, -2.1855695e-09, -1.0062633, 0.0065231323, 0.13024902)
+
+[node name="Casilla3" parent="Pregunta4" unique_id=604431556 instance=ExtResource("3_2y05t")]
+transform = Transform3D(-2.1855695e-09, 0, 0.05, 0, 0.05, 0, -0.05, 0, -2.1855695e-09, -1.0002916, -0.37843812, 0.13024902)
+
+[node name="Pregunta5" type="Node3D" parent="." unique_id=1265285687]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.7278457, 0)
+
+[node name="Casilla" parent="Pregunta5" unique_id=2084191596 instance=ExtResource("3_2y05t")]
+transform = Transform3D(-2.1855695e-09, 0, 0.05, 0, 0.05, 0, -0.05, 0, -2.1855695e-09, -1.0023308, 0.35829246, 0.13024902)
+
+[node name="Casilla2" parent="Pregunta5" unique_id=1767515026 instance=ExtResource("3_2y05t")]
+transform = Transform3D(-2.1855695e-09, 0, 0.05, 0, 0.05, 0, -0.05, 0, -2.1855695e-09, -1.0062633, 0.0065231323, 0.13024902)
+
+[node name="Casilla3" parent="Pregunta5" unique_id=1438781570 instance=ExtResource("3_2y05t")]
+transform = Transform3D(-2.1855695e-09, 0, 0.05, 0, 0.05, 0, -0.05, 0, -2.1855695e-09, -1.0002916, -0.37843812, 0.13024902)
+
+[node name="Pregunta6" type="Node3D" parent="." unique_id=655879138]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7.2708125, 0)
+
+[node name="Casilla" parent="Pregunta6" unique_id=169635059 instance=ExtResource("3_2y05t")]
+transform = Transform3D(-2.1855695e-09, 0, 0.05, 0, 0.05, 0, -0.05, 0, -2.1855695e-09, -1.0023308, 0.35829246, 0.13024902)
+
+[node name="Casilla2" parent="Pregunta6" unique_id=495572112 instance=ExtResource("3_2y05t")]
+transform = Transform3D(-2.1855695e-09, 0, 0.05, 0, 0.05, 0, -0.05, 0, -2.1855695e-09, -1.0062633, 0.0065231323, 0.13024902)
+
+[node name="Casilla3" parent="Pregunta6" unique_id=1244476889 instance=ExtResource("3_2y05t")]
+transform = Transform3D(-2.1855695e-09, 0, 0.05, 0, 0.05, 0, -0.05, 0, -2.1855695e-09, -1.0002916, -0.37843812, 0.13024902)
+
+[node name="Pregunta7" type="Node3D" parent="." unique_id=1649641894]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.702652, 0)
+
+[node name="Casilla" parent="Pregunta7" unique_id=1665490753 instance=ExtResource("3_2y05t")]
+transform = Transform3D(-2.1855695e-09, 0, 0.05, 0, 0.05, 0, -0.05, 0, -2.1855695e-09, -1.0023308, 0.35829246, 0.13024902)
+
+[node name="Casilla2" parent="Pregunta7" unique_id=2134385288 instance=ExtResource("3_2y05t")]
+transform = Transform3D(-2.1855695e-09, 0, 0.05, 0, 0.05, 0, -0.05, 0, -2.1855695e-09, -1.0062633, 0.0065231323, 0.13024902)
+
+[node name="Casilla3" parent="Pregunta7" unique_id=183644817 instance=ExtResource("3_2y05t")]
+transform = Transform3D(-2.1855695e-09, 0, 0.05, 0, 0.05, 0, -0.05, 0, -2.1855695e-09, -1.0002916, -0.37843812, 0.13024902)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=343989755]
 transform = Transform3D(1, -3.4729322e-07, -2.8857833e-08, 2.8857833e-08, 0.16504757, -0.9862856, 3.4729322e-07, 0.9862856, 0.16504757, 0.515, 3.308, 0.631)
@@ -43,3 +126,51 @@ shadow_enabled = true
 shadow_bias = 0.06
 shadow_normal_bias = 2.913
 shadow_blur = 0.643
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=356632345]
+
+[node name="ButtonUp" type="Button" parent="CanvasLayer" unique_id=1992697240]
+custom_minimum_size = Vector2(110, 50)
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -258.0
+offset_top = 160.0
+offset_right = -138.0
+offset_bottom = 278.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 80
+text = "^"
+
+[node name="ButtonDown" type="Button" parent="CanvasLayer" unique_id=761164953]
+custom_minimum_size = Vector2(110, 50)
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -255.0
+offset_top = 291.0
+offset_right = -135.0
+offset_bottom = 409.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 80
+text = "v"
+
+[node name="FinishButton" type="Button" parent="CanvasLayer" unique_id=1738125648]
+visible = false
+custom_minimum_size = Vector2(200, 100)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -113.0
+offset_top = -109.0
+offset_right = 87.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("5_ak8h4")
+theme_override_font_sizes/font_size = 50
+text = "Finish"

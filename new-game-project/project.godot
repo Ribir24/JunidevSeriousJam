@@ -24,10 +24,12 @@ InteractManager="*uid://bv2u0i17ovogj"
 
 directories/dch_directory={
 "mayor": "res://Characters/mayor.dch",
-"unit_test_character": "res://Tests/Resources/unit_test_character.dch"
+"unit_test_character": "res://Tests/Resources/unit_test_character.dch",
+"you": "res://Characters/you.dch"
 }
 directories/dtl_directory={
-"mayor_timeline": "res://Timelines/mayor_timeline.dtl"
+"mayor_timeline": "res://Timelines/mayor_timeline.dtl",
+"well_timeline": "res://Timelines/well_timeline.dtl"
 }
 layout/style_directory={
 "": "res://Dialogic_Styles/plastilina_style_3.tres",

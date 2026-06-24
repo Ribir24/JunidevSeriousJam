@@ -8,7 +8,11 @@ var crank_pressed:bool=false
 var tv_pressed:bool=false
 
 @export var crank:Node3D
-@export var tv:FirstTV
+@export var tv:Node3D
+@export var well:Node3D
+@export var trash:Node3D
+
+@onready var trash_label:Label3D=trash.get_child(0).get_child(1)
 
 @export var spot_light:SpotLight3D
 @export var omni_light:OmniLight3D
@@ -36,7 +40,12 @@ func _check_grabbed_object():
 			tv_pressed=true
 			dialog_number+=1
 			Dialogic.start("mayor_timeline")
+		elif grabbed_object==well and well.is_anim_finished():
+			dialog_number+=1
+			Dialogic.start("well_timeline")
 
 func _on_timeline_end():
 	if dialog_number==1:
-		print("POZO")
+		well.appear()
+	elif dialog_number==2:
+		trash.appear()

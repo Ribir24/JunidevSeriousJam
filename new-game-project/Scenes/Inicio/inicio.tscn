@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://b2osx7aq0pasb" path="res://Scenes/Inicio/habitacion.tscn" id="1_notyv"]
 [ext_resource type="PackedScene" uid="uid://csuw0idw1jim6" path="res://Scenes/Inicio/manivela.tscn" id="3_dg7ge"]
 [ext_resource type="PackedScene" uid="uid://bahchmg6jv6tg" path="res://Scenes/Inicio/first_tv.tscn" id="4_jglie"]
+[ext_resource type="PackedScene" uid="uid://wed7ucg1afmt" path="res://Scenes/Inicio/pozo.tscn" id="5_ir0k4"]
+[ext_resource type="PackedScene" uid="uid://w102asy7b8et" path="res://Scenes/Inicio/basura.tscn" id="6_r3vs7"]
 
 [sub_resource type="Environment" id="Environment_6amc0"]
 background_energy_multiplier = 0.0
@@ -11,10 +13,12 @@ ambient_light_source = 1
 ambient_light_energy = 0.0
 reflected_light_source = 1
 
-[node name="Inicio" type="Node3D" unique_id=1999856992 node_paths=PackedStringArray("crank", "tv", "spot_light", "omni_light")]
+[node name="Inicio" type="Node3D" unique_id=1999856992 node_paths=PackedStringArray("crank", "tv", "well", "trash", "spot_light", "omni_light")]
 script = ExtResource("1_6bxyb")
 crank = NodePath("Manivela")
 tv = NodePath("FirstTV")
+well = NodePath("Pozo")
+trash = NodePath("Basura")
 spot_light = NodePath("SpotLight3D")
 omni_light = NodePath("OmniLight3D")
 
@@ -44,3 +48,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.031769, 17, 24.23169)
 visible = false
 omni_range = 4096.0
 omni_attenuation = 0.248
+
+[node name="Pozo" parent="." unique_id=448281552 instance=ExtResource("5_ir0k4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6116333, 0.09631348, -7.7405396)
+
+[node name="Basura" parent="." unique_id=540307091 instance=ExtResource("6_r3vs7")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.3363752, 1.4371948, -0.9424424)

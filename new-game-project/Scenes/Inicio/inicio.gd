@@ -17,6 +17,20 @@ var tv_pressed:bool=false
 @export var spot_light:SpotLight3D
 @export var omni_light:OmniLight3D
 
+const trash_items:Array=[
+	"a toy horse",
+	"a lever",
+	"a dissected frog",
+	"part of a bench",
+	"a fly colony",
+	"various assortments of beef",
+	"half-eaten tacos",
+	"soleless shoes",
+	"a racoon",
+	"a lot of crabs",
+	"perfectly good forks"
+]
+
 var dialog_number:int=0
 
 func _ready() -> void:

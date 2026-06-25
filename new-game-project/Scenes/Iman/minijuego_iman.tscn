@@ -1,11 +1,12 @@
 [gd_scene format=3 uid="uid://cxfswct8gi2a3"]
 
-[ext_resource type="PackedScene" uid="uid://msf7exqtwddv" path="res://Modelos/Imán.glb" id="1_wbtbj"]
-[ext_resource type="Script" uid="uid://b7m45xtbnj8f5" path="res://Modelos/imán.gd" id="2_d2no7"]
-[ext_resource type="PackedScene" uid="uid://ckphsxewr3sdi" path="res://Modelos/Cuerda.glb" id="2_ohoov"]
-[ext_resource type="PackedScene" uid="uid://btuvt4sk3umc4" path="res://Modelos/Tierra.glb" id="4_h2c04"]
-[ext_resource type="Script" uid="uid://x6qsrkd88l6s" path="res://Scripts/generadorRocas.gd" id="6_if162"]
-[ext_resource type="PackedScene" uid="uid://dj16tjgxwcif0" path="res://Scenes/roc.tscn" id="7_ihux1"]
+[ext_resource type="Script" uid="uid://b7m45xtbnj8f5" path="res://Modelos/imán.gd" id="1_iigoh"]
+[ext_resource type="PackedScene" uid="uid://ckphsxewr3sdi" path="res://Modelos/Cuerda.glb" id="2_j2flh"]
+[ext_resource type="PackedScene" uid="uid://msf7exqtwddv" path="res://Modelos/Imán.glb" id="3_y5yc8"]
+[ext_resource type="PackedScene" uid="uid://btuvt4sk3umc4" path="res://Modelos/Tierra.glb" id="4_codgs"]
+[ext_resource type="Script" uid="uid://x6qsrkd88l6s" path="res://Scripts/generadorRocas.gd" id="5_k2bag"]
+[ext_resource type="PackedScene" uid="uid://dj16tjgxwcif0" path="res://Scenes/Iman/roc.tscn" id="6_vr1a8"]
+[ext_resource type="PackedScene" uid="uid://d1ufroagl4qmq" path="res://Scenes/Iman/llave.tscn" id="7_j2flh"]
 
 [sub_resource type="Environment" id="Environment_d2no7"]
 background_mode = 1
@@ -16,7 +17,7 @@ ambient_light_energy = 14.1
 reflected_light_source = 2
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_akpyo"]
-size = Vector3(2.128357, 2.786621, 2.3433685)
+size = Vector3(2.128357, 3.8708496, 3.1874657)
 
 [node name="MinijuegoIman" type="Node3D" unique_id=1266419544]
 
@@ -28,35 +29,35 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -4.4
 
 [node name="Node3D" type="Node3D" parent="." unique_id=947430939]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.540038, 0)
-script = ExtResource("2_d2no7")
-base = null
+script = ExtResource("1_iigoh")
 
 [node name="Area3D" type="Area3D" parent="Node3D" unique_id=677491555]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
-collision_mask = 2
+collision_layer = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Area3D" unique_id=519561745]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3146057, 3.427002, 0.31040192)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3146057, 2.8848877, 0.3056583)
 shape = SubResource("BoxShape3D_akpyo")
 
-[node name="Cuerda" parent="Node3D" unique_id=1683127015 instance=ExtResource("2_ohoov")]
+[node name="Cuerda" parent="Node3D" unique_id=1683127015 instance=ExtResource("2_j2flh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5712368, 0, 2.806724)
 
-[node name="Imán" parent="Node3D" unique_id=1802442652 instance=ExtResource("1_wbtbj")]
+[node name="Imán" parent="Node3D" unique_id=1802442652 instance=ExtResource("3_y5yc8")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=946535633]
 transform = Transform3D(1, 0, 0, 0, -0.7659434, -0.642908, 0, 0.642908, -0.7659434, 0, 0, -7.2723556)
 
-[node name="Tierra2" parent="." unique_id=2045177209 instance=ExtResource("4_h2c04")]
+[node name="Tierra2" parent="." unique_id=2045177209 instance=ExtResource("4_codgs")]
 transform = Transform3D(-4.3836646e-08, 0, 1.0028656, 0, 3.9277318, 0, -1.0028656, 0, -4.3836646e-08, -19.526764, -25.345724, 2.329)
 
-[node name="Tierra3" parent="." unique_id=2027172086 instance=ExtResource("4_h2c04")]
+[node name="Tierra3" parent="." unique_id=2027172086 instance=ExtResource("4_codgs")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 3.824822, 0, -1, 0, -4.371139e-08, 25.13119, -22.836332, 2.3294926)
 
 [node name="Generador" type="Node3D" parent="." unique_id=1082883382]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.8070164, 0)
-script = ExtResource("6_if162")
-rock_scene = ExtResource("7_ihux1")
+script = ExtResource("5_k2bag")
+rock_scene = ExtResource("6_vr1a8")
+key_scene = ExtResource("7_j2flh")
 spawn_interval = 2.5
 min_x = -17.0

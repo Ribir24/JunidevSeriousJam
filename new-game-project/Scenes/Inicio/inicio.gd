@@ -6,6 +6,7 @@ var grabbed_object:Node3D=null
 
 var crank_pressed:bool=false
 var tv_pressed:bool=false
+var magnet_found:bool=false
 
 @export var crank:Node3D
 @export var tv:Node3D
@@ -16,6 +17,8 @@ var tv_pressed:bool=false
 
 @export var spot_light:SpotLight3D
 @export var omni_light:OmniLight3D
+
+
 
 const trash_items:Array=[
 	"a toy horse",
@@ -32,6 +35,8 @@ const trash_items:Array=[
 ]
 
 var dialog_number:int=0
+var trash_items_picked:int=0
+var trash_items_max:int=5
 
 func _ready() -> void:
 	Dialogic.timeline_ended.connect(_on_timeline_end)
@@ -55,8 +60,21 @@ func _check_grabbed_object():
 			dialog_number+=1
 			Dialogic.start("mayor_timeline")
 		elif grabbed_object==well and well.is_anim_finished():
-			dialog_number+=1
-			Dialogic.start("well_timeline")
+			if not magnet_found:
+				dialog_number+=1
+				Dialogic.start("well_timeline")
+			else:
+				get_tree().change_scene_to_file("res://Scenes/minijuego_iman.tscn")
+		elif grabbed_object==trash and trash.is_anim_finished():
+			_get_trash_item()
+
+func _get_trash_item():
+	trash_items_picked+=1
+	if trash_items_picked<trash_items_max:
+		trash_label.text="You found "+trash_items.pick_random()
+	else:
+		trash_label.text="You found a magnet"
+		magnet_found=true
 
 func _on_timeline_end():
 	if dialog_number==1:

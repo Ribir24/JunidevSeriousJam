@@ -44,6 +44,10 @@ layout/default_style="res://Dialogic_Styles/plastilina_style_3.tres"
 
 enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
 
+[global_group]
+
+key=""
+
 [input]
 
 LeftInput={

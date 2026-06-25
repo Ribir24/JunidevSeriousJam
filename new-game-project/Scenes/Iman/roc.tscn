@@ -1,20 +1,20 @@
 [gd_scene format=3 uid="uid://dj16tjgxwcif0"]
 
-[ext_resource type="PackedScene" uid="uid://btuvt4sk3umc4" path="res://Modelos/Tierra.glb" id="1_bvfkb"]
-[ext_resource type="Script" uid="uid://bc57x5xhoj8gx" path="res://Script/Roca.gd" id="2_rh1ua"]
+[ext_resource type="PackedScene" uid="uid://btuvt4sk3umc4" path="res://Modelos/Tierra.glb" id="1_ihonx"]
+[ext_resource type="Script" uid="uid://bc57x5xhoj8gx" path="res://Script/Roca.gd" id="2_u0ixr"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_akpyo"]
 size = Vector3(4.8287354, 1.2261047, 2.1645508)
 
 [node name="Roc" type="Node3D" unique_id=199478800]
+script = ExtResource("2_u0ixr")
+max_height = 30.0
 
-[node name="a" parent="." unique_id=2045177209 instance=ExtResource("1_bvfkb")]
+[node name="a" parent="." unique_id=2045177209 instance=ExtResource("1_ihonx")]
 transform = Transform3D(-0.18776363, 0, 0.3365954, 0, 0.11551822, 0, -4.7430363, 0, -0.013324878, 6.057914, -12.648153, -6.955847)
-script = ExtResource("2_rh1ua")
-speed = 3.75
 
 [node name="Area3D" type="Area3D" parent="." unique_id=1728845506]
-collision_layer = 2
+collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=796818312]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2391872, -11.729433, 2.2745123)

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="PULL THE CRANK"
-run/main_scene="uid://c76pg43407cco"
+run/main_scene="uid://dmvq5ae2651bw"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 

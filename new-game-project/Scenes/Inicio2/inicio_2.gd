@@ -18,13 +18,15 @@ var door_open:bool=false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	first_tv.speed_up()
-	first_tv.appear()
-	pozo.speed_up()
-	pozo.appear()
-	basura.speed_up()
-	basura.appear()
+	first_tv.appear(true)
+	pozo.appear(true)
+	basura.appear(true)
 	super_market.play_anim_string("SMOpen")
+	super_market.set_speed(0.2)
+	super_market.stop()
+	await get_tree().create_timer(1.5).timeout
+	super_market.c0ntinue()
+	
 
 
 
@@ -41,10 +43,11 @@ func _input(event):
 func _check_grabbed_object():
 	if grabbed_object==super_market:
 		if is_clicked:
-			print("SHOP")
+			get_tree().call_deferred("change_scene_to_file","res://Scenes/Escaner/minijuego_escaner.tscn")
 		else:
 			if super_market.is_anim_finished() and not door_open:
 				door_open=true
+				super_market.set_speed(1.0)
 				super_market.play_anim_string("SMAppear")
 	else:
 		if  super_market.is_anim_finished() and door_open:

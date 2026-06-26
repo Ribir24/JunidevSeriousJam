@@ -64,7 +64,7 @@ func _check_grabbed_object():
 				dialog_number+=1
 				Dialogic.start("well_timeline")
 			else:
-				get_tree().change_scene_to_file("res://Scenes/minijuego_iman.tscn")
+				get_tree().change_scene_to_file("res://Scenes/Iman/minijuego_iman.tscn")
 		elif grabbed_object==trash and trash.is_anim_finished():
 			_get_trash_item()
 

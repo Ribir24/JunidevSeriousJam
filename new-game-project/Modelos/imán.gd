@@ -23,6 +23,6 @@ func _process(delta: float):
 
 func _on_area_3d_body_entered(body: Node3D):
 	if body.is_in_group("key"):
-		print("WON")
+		get_tree().call_deferred("change_scene_to_file","res://Scenes/Inicio2/inicio_2.tscn")
 	else:
 		get_tree().call_deferred("reload_current_scene")

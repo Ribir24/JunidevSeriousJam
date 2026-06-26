@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://jyaehdjaabem"]
+
+[ext_resource type="Script" uid="uid://cvf6s4nl270ns" path="res://Scenes/Inicio3/inicio_3.gd" id="1_33mvp"]
+[ext_resource type="PackedScene" uid="uid://b2osx7aq0pasb" path="res://Scenes/Inicio/habitacion.tscn" id="1_kgur7"]
+[ext_resource type="PackedScene" uid="uid://csuw0idw1jim6" path="res://Scenes/Inicio/manivela.tscn" id="2_33mvp"]
+[ext_resource type="PackedScene" uid="uid://bahchmg6jv6tg" path="res://Scenes/Inicio/first_tv.tscn" id="3_6y80c"]
+[ext_resource type="PackedScene" uid="uid://wed7ucg1afmt" path="res://Scenes/Inicio/pozo.tscn" id="4_vaulr"]
+[ext_resource type="PackedScene" uid="uid://w102asy7b8et" path="res://Scenes/Inicio/basura.tscn" id="5_4lygo"]
+[ext_resource type="PackedScene" uid="uid://dn7o82mbwvu3w" path="res://Scenes/Inicio2/super_market.tscn" id="6_sq2y2"]
+
+[sub_resource type="Environment" id="Environment_dqmru"]
+background_energy_multiplier = 0.0
+ambient_light_source = 1
+ambient_light_energy = 0.0
+reflected_light_source = 1
+
+[node name="Inicio3" type="Node3D" unique_id=1762965916 node_paths=PackedStringArray("first_tv", "pozo", "basura", "super_market")]
+script = ExtResource("1_33mvp")
+first_tv = NodePath("FirstTV")
+pozo = NodePath("Pozo")
+basura = NodePath("Basura")
+super_market = NodePath("SuperMarket")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1194900319]
+transform = Transform3D(0.60325027, -0.23589346, 0.76186836, -0.063405424, 0.93805045, 0.3406485, -0.7950276, -0.2538028, 0.5509222, 3.7913818, 5.4329834, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=739067481]
+environment = SubResource("Environment_dqmru")
+
+[node name="Habitacion" parent="." unique_id=1931690125 instance=ExtResource("1_kgur7")]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1408810465]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -3.4776, 7.0859985, -5)
+visible = false
+light_energy = 16.0
+light_size = 1.0
+spot_range = 20.0
+spot_attenuation = 1.4
+
+[node name="Manivela" parent="." unique_id=2042717707 instance=ExtResource("2_33mvp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.43573, 2.2423096, -5.9799805)
+
+[node name="FirstTV" parent="." unique_id=1342482313 instance=ExtResource("3_6y80c")]
+transform = Transform3D(0.39955282, -0.010080381, -0.3004261, 0.018335527, 0.49960548, 0.00762189, 0.30003545, -0.017107656, 0.3996073, 1.2565765, 0.631073, -1.144043)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1028501446]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.031769, 17, 24.23169)
+omni_range = 4096.0
+omni_attenuation = 0.248
+
+[node name="Pozo" parent="." unique_id=448281552 instance=ExtResource("4_vaulr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6116333, 0.09631348, -7.7405396)
+
+[node name="Basura" parent="." unique_id=540307091 instance=ExtResource("5_4lygo")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.3363752, 1.4371948, -0.9424424)
+
+[node name="SuperMarket" parent="." unique_id=1266691460 instance=ExtResource("6_sq2y2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)

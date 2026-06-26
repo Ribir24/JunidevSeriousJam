@@ -4,16 +4,26 @@
 [ext_resource type="Texture2D" uid="uid://dxrjphe763bg5" path="res://Modelos/MinijuegoEscanerBackground.png" id="2_svftt"]
 [ext_resource type="PackedScene" uid="uid://qlsoi4uie47m" path="res://Scenes/Escaner/escaner.tscn" id="3_svftt"]
 
-[node name="MinijuegoEscaner" type="Node3D" unique_id=28514680]
+[node name="MinijuegoEscaner" type="Node3D" unique_id=28514680 node_paths=PackedStringArray("scanner")]
 script = ExtResource("1_wrkm6")
+min_x = -28.0
+max_x = -14.0
+scanner = NodePath("Escaner")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1247332417]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.871708)
 projection = 1
 size = 10.0
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=1583899972]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, -6.6622925)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, -1.7905846)
 texture = ExtResource("2_svftt")
 
 [node name="Escaner" parent="." unique_id=1552938234 instance=ExtResource("3_svftt")]
-transform = Transform3D(3.060293, 0.0049034655, -2.5757685, -0.10391964, 3.996971, -0.11585882, 2.573676, 0.15555872, 3.0581028, -27.556763, -35.22652, -96.66925)
+transform = Transform3D(3.060293, 0.0049034655, -2.5757685, -0.10391964, 3.996971, -0.11585882, 2.573676, 0.15555872, 3.0581028, -28, -35.227, -91.79729)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=510776863]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 13.871708)
+light_energy = 16.0
+light_size = 1.0
+omni_range = 412.793

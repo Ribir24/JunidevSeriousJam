@@ -10,7 +10,6 @@ func _ready() -> void:
 
 func appear():
 	anim_player.play(anim_name)
-	
 
 func play_anim_string(anim:String):
 	anim_player.play(anim)
@@ -23,3 +22,5 @@ func _on_anim_finish(_anim_name: StringName) -> void:
 
 func speed_up():
 	anim_player.speed_scale=1000
+func set_speed(val:float):
+	anim_player.speed_scale=val

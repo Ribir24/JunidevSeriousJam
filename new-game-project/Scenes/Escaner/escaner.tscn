@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://qlsoi4uie47m"]
 
 [ext_resource type="Texture2D" uid="uid://dwlm5he4ad65s" path="res://Modelos/Escaner_Escaner.png" id="1_32yyu"]
+[ext_resource type="Script" uid="uid://t2yvytvdd7ju" path="res://Script/object_with_anim.gd" id="1_m1ljd"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_slyr7"]
 resource_name = "scan"
@@ -210,7 +211,9 @@ _data = {
 &"FINAL": SubResource("Animation_1206b")
 }
 
-[node name="Escaner" type="Node3D" unique_id=1552938234]
+[node name="Escaner" type="Node3D" unique_id=1552938234 node_paths=PackedStringArray("anim_player")]
+script = ExtResource("1_m1ljd")
+anim_player = NodePath("AnimationPlayer")
 
 [node name="Cuerpo" type="MeshInstance3D" parent="." unique_id=1081412689]
 mesh = SubResource("ArrayMesh_m1ljd")
@@ -222,11 +225,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.499683, 9.751762, 14.01992
 shape = SubResource("BoxShape3D_6amc0")
 
 [node name="ErrorText" type="MeshInstance3D" parent="." unique_id=181913239]
-transform = Transform3D(0.73459506, 0.6785058, -2.9802322e-08, 2.9802322e-08, -1.1920929e-07, -1, -0.6785058, 0.73459506, -1.1920929e-07, 18.3487, 9.854629, 14.078654)
+transform = Transform3D(0.73459506, 0.6785058, -2.9802322e-08, 2.9802322e-08, -1.1920929e-07, -1, -0.6785058, 0.73459506, -1.1920929e-07, 18.33901, 9.854629, 14.083735)
 mesh = SubResource("ArrayMesh_ihovh")
 
 [node name="notFound" type="MeshInstance3D" parent="." unique_id=429100785]
-transform = Transform3D(0.7624488, 0.6470486, 2.9802322e-08, -2.9802322e-08, 5.9604645e-08, -1, -0.6470486, 0.7624488, 5.9604645e-08, 18.477028, 9.927633, 13.978956)
+transform = Transform3D(0.7624488, 0.6470486, 2.9802322e-08, -2.9802322e-08, 5.9604645e-08, -1, -0.6470486, 0.7624488, 5.9604645e-08, 18.508371, 9.927633, 13.971977)
 mesh = SubResource("ArrayMesh_1xi6p")
 
 [node name="AnotherShopText" type="MeshInstance3D" parent="." unique_id=1264143234]

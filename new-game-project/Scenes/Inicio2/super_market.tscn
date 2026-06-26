@@ -376,15 +376,15 @@ script = ExtResource("1_hen5n")
 anim_player = NodePath("AnimationPlayer")
 
 [node name="LeftDoor" type="MeshInstance3D" parent="." unique_id=1200543420]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4021268, 0, -14.976741)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4021268, 0, -14.13666)
 mesh = SubResource("ArrayMesh_8x5yh")
 
 [node name="RightDoor" type="MeshInstance3D" parent="." unique_id=1305942831]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.433545, 0, -14.994989)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.433545, 0, -14.154908)
 mesh = SubResource("ArrayMesh_hen5n")
 
 [node name="Background" type="MeshInstance3D" parent="." unique_id=1002104814]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.8875905)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.1285107)
 mesh = SubResource("ArrayMesh_l5ii4")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Background" unique_id=501976364]

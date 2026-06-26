@@ -15,3 +15,6 @@ func get_mouse_world_pos(_mouse:Vector2,DIST:float)->Node3D:
 		return result.collider.get_parent().get_parent()
 	else:
 		return null
+
+func get_grab_position(_mouse:Vector2,Zpos:float)->float:
+	return get_viewport().get_camera_3d().project_position(_mouse,Zpos).x

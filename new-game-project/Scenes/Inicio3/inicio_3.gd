@@ -69,7 +69,7 @@ func _check_grabbed_object():
 		elif(steps <= -1):
 			exam.appear()
 	if grabbed_object == exam and is_clicked:
-		get_tree().call_deferred("change_scene_to_file","res://Scenes/Escaner/minijuego_escaner.tscn")
+		get_tree().call_deferred("change_scene_to_file","res://Scenes/examen/examen.tscn")
 
 func _on_timeline_end():
 	if dialog == 0:

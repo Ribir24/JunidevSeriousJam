@@ -43,4 +43,4 @@ func _check_bar():
 		grabbed_object = null;
 		fin = true;
 		await get_tree().create_timer(1.5).timeout
-		print("FINAL")
+		get_tree().call_deferred("change_scene_to_file","res://Scenes/Inicio3/inicio_3.tscn")

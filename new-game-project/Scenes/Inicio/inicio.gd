@@ -40,7 +40,6 @@ var trash_items_max:int=5
 
 func _ready() -> void:
 	Dialogic.timeline_ended.connect(_on_timeline_end)
-
 func _input(event):
 	if event is InputEventMouseMotion:
 		mouse=event.position
@@ -51,8 +50,16 @@ func _input(event):
 func _check_grabbed_object():
 	if grabbed_object!=null:
 		if grabbed_object==crank and not crank_pressed:
-			spot_light.visible=false
-			omni_light.visible=true
+			var tween1 = create_tween()
+			tween1.tween_property(spot_light, "light_energy", 0.0, 1.5)
+			await tween1.finished
+			
+			await get_tree().create_timer(0.5).timeout
+			
+			var tween2 = create_tween()
+			tween2.tween_property(omni_light, "light_energy", 1.0, 1.5)
+			await tween2.finished
+			
 			tv.appear()
 			crank_pressed=true
 		elif not tv_pressed and grabbed_object==tv and tv.is_anim_finished():
@@ -81,3 +88,5 @@ func _on_timeline_end():
 		well.appear()
 	elif dialog_number==2:
 		trash.appear()
+		var tween = create_tween()
+		tween.tween_property(trash, "global_position:y", 1.437, 0.1)

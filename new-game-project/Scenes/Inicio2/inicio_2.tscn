@@ -22,7 +22,9 @@ basura = NodePath("Basura")
 super_market = NodePath("SuperMarket")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1062650328]
-transform = Transform3D(0.60325027, -0.23589346, 0.76186836, -0.063405424, 0.93805045, 0.3406485, -0.7950276, -0.2538028, 0.5509222, 3.7913818, 5.4329834, 0)
+transform = Transform3D(0.67022747, -0.11468175, 0.73324156, 0.001724783, 0.98822695, 0.15298584, -0.7421537, -0.101270646, 0.6625346, 22.318, 9.302, 14.526)
+keep_aspect = 0
+fov = 39.6
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1773597098]
 environment = SubResource("Environment_0ptj7")
@@ -38,10 +40,10 @@ spot_range = 20.0
 spot_attenuation = 1.4
 
 [node name="Manivela" parent="." unique_id=2042717707 instance=ExtResource("2_f4maf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.43573, 2.2423096, -5.9799805)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.436, 2.242, -10.341)
 
 [node name="FirstTV" parent="." unique_id=1342482313 instance=ExtResource("3_0f00r")]
-transform = Transform3D(0.39955282, -0.010080381, -0.3004261, 0.018335527, 0.49960548, 0.00762189, 0.30003545, -0.017107656, 0.3996073, 1.2565765, 0.631073, -1.144043)
+transform = Transform3D(0.39955282, -0.010080381, -0.3004261, 0.018335527, 0.49960548, 0.00762189, 0.30003545, -0.017107656, 0.3996073, 10.34, 4.001, 7.182)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1946788828]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.031769, 17, 24.23169)
@@ -49,11 +51,13 @@ omni_range = 4096.0
 omni_attenuation = 0.248
 
 [node name="Pozo" parent="." unique_id=448281552 instance=ExtResource("4_vcv4l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6116333, 0.09631348, -7.7405396)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.439, 0.096, 3.183)
 
 [node name="Basura" parent="." unique_id=540307091 instance=ExtResource("5_ecl1s")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.3363752, 1.4371948, -0.9424424)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.522, 1.437, 1.798)
 
 [node name="SuperMarket" parent="." unique_id=1266691460 instance=ExtResource("7_0f00r")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -0.03652191)
 anim_name = "SMOpen"
+
+[editable path="SuperMarket"]

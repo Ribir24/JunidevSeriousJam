@@ -14,6 +14,9 @@ func appear(finished:bool = false):
 	if finished:
 		anim_player.seek(100, true);
 
+func disappear():
+	anim_player.play_backwards(anim_name)
+
 func play_anim_string(anim:String):
 	anim_player.play(anim)
 

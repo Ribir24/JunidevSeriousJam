@@ -69,7 +69,7 @@ script = ExtResource("9_4lygo")
 anim_player = NodePath("AnimationPlayer")
 anim_name = "SombrillaAction"
 
-[node name="Sombrilla" parent="anotherShop" index="0" unique_id=2085471496]
+[node name="Sombrilla" parent="anotherShop" index="0" unique_id=1561424695]
 transform = Transform3D(-0.010369301, 0, -0.5360273, 0, 0.53612757, 0, 0.53602725, 0, -0.010369271, 6.5379004, 24.08813, -9.13623)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="anotherShop/Sombrilla" index="0" unique_id=306534989]
@@ -98,14 +98,14 @@ script = ExtResource("9_4lygo")
 anim_player = NodePath("AnimationPlayer")
 anim_name = "FirstTVAnim"
 
-[node name="Label3D" type="Label3D" parent="SecondTV/FirstTV_001" parent_id_path=PackedInt32Array(283414658, 1294738875) index="0" unique_id=1039427268]
+[node name="Label3D" type="Label3D" parent="SecondTV/FirstTV_001" parent_id_path=PackedInt32Array(283414658, 2087911930) index="0" unique_id=1039427268]
 transform = Transform3D(-0.015874833, 0, 0.9521427, 0, 1, 0, -0.9352901, 0, -0.016160965, 1.9603281, 3.1187801, -1.5750093)
 pixel_size = 0.0117
 text = "Remaining steps:
 4000000
 click to take a step"
 
-[node name="StaticBody3D" type="StaticBody3D" parent="SecondTV/FirstTV_001" parent_id_path=PackedInt32Array(283414658, 1294738875) index="1" unique_id=854491610]
+[node name="StaticBody3D" type="StaticBody3D" parent="SecondTV/FirstTV_001" parent_id_path=PackedInt32Array(283414658, 2087911930) index="1" unique_id=854491610]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SecondTV/FirstTV_001/StaticBody3D" unique_id=1596731183]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1423068, 3.3707561, -1.562222)
@@ -117,7 +117,7 @@ script = ExtResource("9_4lygo")
 anim_player = NodePath("AnimationPlayer")
 anim_name = "Break"
 
-[node name="banana" parent="Manivela2" index="0" unique_id=1585325081]
+[node name="banana" parent="Manivela2" index="0" unique_id=793310728]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -6.966297, 0.52446306, -15.059953)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Manivela2/banana" index="0" unique_id=1964985453]
@@ -126,7 +126,7 @@ transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -6.966297, 
 transform = Transform3D(0.9999879, 0, 0, 0, 1, 0, 0, 0, 0.9999879, -0.115675926, 0.035064697, 0.07235718)
 shape = SubResource("BoxShape3D_hpk51")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Manivela2/Manivela" parent_id_path=PackedInt32Array(1511104784, 1419083123) index="0" unique_id=1888138202]
+[node name="StaticBody3D" type="StaticBody3D" parent="Manivela2/Manivela" parent_id_path=PackedInt32Array(1511104784, 1959029927) index="0" unique_id=1888138202]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Manivela2/Manivela/StaticBody3D" unique_id=736401234]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8609762, -1.0819397, 0.0050354004)
@@ -138,7 +138,7 @@ script = ExtResource("9_4lygo")
 anim_player = NodePath("AnimationPlayer")
 anim_name = "Plane_001Action"
 
-[node name="Plane_001" parent="examenHabitacion" index="0" unique_id=513222011]
+[node name="Plane_001" parent="examenHabitacion" index="0" unique_id=1963173876]
 transform = Transform3D(0.5088815, 0.4241742, -0.5362658, -0.3925704, -0.07244931, -0.8233192, -0.27063462, 0.9026778, 0.18591486, 2.1987262, 12.598137, -4.251068)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="examenHabitacion/Plane_001" index="0" unique_id=1816082492]

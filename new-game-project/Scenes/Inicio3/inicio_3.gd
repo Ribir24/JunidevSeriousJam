@@ -59,7 +59,7 @@ func _check_grabbed_object():
 			Dialogic.start("anotherShopDialog2")
 			dialog += 1
 	elif grabbed_object == manivela and is_clicked:
-		if (steps > 3999990):
+		if (steps <= 3999990 and steps > 0):
 			if (!platano):
 				manivela.c0ntinue()
 				platano = true;
@@ -68,6 +68,7 @@ func _check_grabbed_object():
 				steps = -1;
 		elif(steps <= -1):
 			exam.appear()
+			exam.set_speed(0.4)
 	if grabbed_object == exam and is_clicked:
 		get_tree().call_deferred("change_scene_to_file","res://Scenes/examen/examen.tscn")
 

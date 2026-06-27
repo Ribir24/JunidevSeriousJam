@@ -136,13 +136,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8609762, -1.0819397, 0.0050
 shape = SubResource("BoxShape3D_gye3g")
 
 [node name="examenHabitacion" parent="." unique_id=1402766520 node_paths=PackedStringArray("anim_player") instance=ExtResource("11_dqmru")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.064146, 0, -6.8967667)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.397915, 0, -2.7184634)
 script = ExtResource("9_4lygo")
 anim_player = NodePath("AnimationPlayer")
 anim_name = "Plane_001Action"
 
 [node name="Plane_001" parent="examenHabitacion" index="0" unique_id=705996837]
-transform = Transform3D(0.5088815, 0.42417422, -0.53626585, -0.39257044, -0.07244932, -0.82331926, -0.27063462, 0.90267783, 0.18591487, 2.1987262, 12.598137, -4.251068)
+transform = Transform3D(0.5088815, 0.4241742, -0.5362658, -0.3925704, -0.07244931, -0.8233192, -0.27063462, 0.9026778, 0.18591486, 2.1987262, 12.598137, -4.251068)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="examenHabitacion/Plane_001" index="0" unique_id=1816082492]
 

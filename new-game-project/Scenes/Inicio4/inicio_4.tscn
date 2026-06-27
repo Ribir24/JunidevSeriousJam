@@ -1,0 +1,130 @@
+[gd_scene format=3 uid="uid://jyaehdjaabem"]
+
+[ext_resource type="Script" uid="uid://cvf6s4nl270ns" path="res://Scenes/Inicio4/inicio_4.gd" id="1_33mvp"]
+[ext_resource type="PackedScene" uid="uid://b2osx7aq0pasb" path="res://Scenes/Inicio/habitacion.tscn" id="1_kgur7"]
+[ext_resource type="PackedScene" uid="uid://bahchmg6jv6tg" path="res://Scenes/Inicio/first_tv.tscn" id="3_6y80c"]
+[ext_resource type="PackedScene" uid="uid://wed7ucg1afmt" path="res://Scenes/Inicio/pozo.tscn" id="4_vaulr"]
+[ext_resource type="PackedScene" uid="uid://w102asy7b8et" path="res://Scenes/Inicio/basura.tscn" id="5_4lygo"]
+[ext_resource type="PackedScene" uid="uid://cxsttvrof83jl" path="res://Scenes/Inicio4/anotherShop.glb" id="8_vaulr"]
+[ext_resource type="Script" uid="uid://t2yvytvdd7ju" path="res://Script/object_with_anim.gd" id="9_4lygo"]
+[ext_resource type="PackedScene" uid="uid://ccbdrma244yba" path="res://Scenes/Inicio4/Congrats.glb" id="10_m1k6j"]
+[ext_resource type="PackedScene" uid="uid://bw1ykqrfsi1ya" path="res://Scenes/Inicio4/examenHabitacion.glb" id="11_dqmru"]
+[ext_resource type="PackedScene" uid="uid://bu887mt43xacy" path="res://Scenes/Inicio4/Manivela.glb" id="11_sq2y2"]
+
+[sub_resource type="Environment" id="Environment_dqmru"]
+background_energy_multiplier = 0.0
+ambient_light_source = 1
+ambient_light_energy = 0.0
+reflected_light_source = 1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ei47y"]
+size = Vector3(5, 11.111328, 7.787079)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hpk51"]
+size = Vector3(0.5322571, 0.7597046, 1.4317017)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gye3g"]
+size = Vector3(2.886953, 2.2979126, 0.64398193)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qu3ek"]
+size = Vector3(2.1972656, 2.0916748, 0.19482422)
+
+[node name="Inicio4" type="Node3D" unique_id=1762965916 node_paths=PackedStringArray("first_tv", "pozo", "basura", "anShop", "manivela", "exam", "congrats")]
+script = ExtResource("1_33mvp")
+first_tv = NodePath("FirstTV")
+pozo = NodePath("Pozo")
+basura = NodePath("Basura")
+anShop = NodePath("anotherShop")
+manivela = NodePath("Manivela2")
+exam = NodePath("examenHabitacion")
+congrats = NodePath("Congrats")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=739067481]
+environment = SubResource("Environment_dqmru")
+
+[node name="Habitacion" parent="." unique_id=1931690125 instance=ExtResource("1_kgur7")]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1408810465]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -3.4776, 7.0859985, -5)
+visible = false
+light_energy = 16.0
+light_size = 1.0
+spot_range = 20.0
+spot_attenuation = 1.4
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1028501446]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.031769, 17, 24.23169)
+omni_range = 4096.0
+omni_attenuation = 0.248
+
+[node name="anotherShop" parent="." unique_id=1410104953 node_paths=PackedStringArray("anim_player") instance=ExtResource("8_vaulr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.664867, 0, -1.1469665)
+script = ExtResource("9_4lygo")
+anim_player = NodePath("AnimationPlayer")
+anim_name = "SombrillaAction"
+
+[node name="Sombrilla" parent="anotherShop" index="0" unique_id=1702835819]
+transform = Transform3D(-0.010369301, 0, -0.5360273, 0, 0.53612757, 0, 0.53602725, 0, -0.010369271, 6.5379004, 24.08813, -9.13623)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="anotherShop/Sombrilla" index="0" unique_id=306534989]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="anotherShop/Sombrilla/StaticBody3D" unique_id=1925064890]
+transform = Transform3D(0.9999993, 0, -2.0302832e-07, 0, 0.9999556, 0, 1.8626451e-09, 0, 0.99998015, -1.335144e-05, -2.531025, -0.98615503)
+shape = SubResource("BoxShape3D_ei47y")
+
+[node name="FirstTV" parent="." unique_id=1342482313 instance=ExtResource("3_6y80c")]
+transform = Transform3D(0.39955282, -0.010080381, -0.3004261, 0.018335527, 0.49960548, 0.00762189, 0.30003545, -0.017107656, 0.3996073, 10.34, 4.001, 7.182)
+
+[node name="Pozo" parent="." unique_id=448281552 instance=ExtResource("4_vaulr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.439, 0.096, 3.183)
+
+[node name="Basura" parent="." unique_id=540307091 instance=ExtResource("5_4lygo")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.522, 1.437, 1.798)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=892320960]
+transform = Transform3D(0.67022765, -0.11468177, 0.73324174, 0.0017247925, 0.98822695, 0.15298586, -0.7421537, -0.10127066, 0.6625347, 22.318, 9.302, 14.526)
+keep_aspect = 0
+fov = 39.6
+
+[node name="Manivela2" parent="." unique_id=1511104784 node_paths=PackedStringArray("anim_player") instance=ExtResource("11_sq2y2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11909437, 0.020236492, -0.7051215)
+script = ExtResource("9_4lygo")
+anim_player = NodePath("AnimationPlayer")
+anim_name = "PutBanana"
+
+[node name="banana" parent="Manivela2" index="0" unique_id=2046596430]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -6.966297, 0.52446306, -15.059953)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Manivela2/banana" index="0" unique_id=1964985453]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Manivela2/banana/StaticBody3D" unique_id=382807945]
+transform = Transform3D(0.9999879, 0, 0, 0, 1, 0, 0, 0, 0.9999879, -0.115675926, 0.035064697, 0.07235718)
+shape = SubResource("BoxShape3D_hpk51")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Manivela2/Manivela" parent_id_path=PackedInt32Array(1511104784, 1837851483) index="0" unique_id=1888138202]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Manivela2/Manivela/StaticBody3D" unique_id=736401234]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8609762, -1.0819397, 0.0050354004)
+shape = SubResource("BoxShape3D_gye3g")
+
+[node name="examenHabitacion" parent="." unique_id=1402766520 node_paths=PackedStringArray("anim_player") instance=ExtResource("11_dqmru")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.397915, 0, -2.7184634)
+script = ExtResource("9_4lygo")
+anim_player = NodePath("AnimationPlayer")
+anim_name = "Plane_001Action"
+
+[node name="Plane_001" parent="examenHabitacion" index="0" unique_id=562624177]
+transform = Transform3D(0.5088815, 0.4241742, -0.5362658, -0.3925704, -0.07244931, -0.8233192, -0.27063462, 0.9026778, 0.18591486, 2.1987262, 12.598137, -4.251068)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="examenHabitacion/Plane_001" index="0" unique_id=1816082492]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="examenHabitacion/Plane_001/StaticBody3D" unique_id=56585210]
+transform = Transform3D(1, 0, 7.4505806e-08, 0, 1, -2.9802322e-08, -1.1175871e-08, -1.4901161e-08, 1, -0.015623093, -0.075494766, 0.021219254)
+shape = SubResource("BoxShape3D_qu3ek")
+
+[node name="Congrats" parent="." unique_id=641132385 instance=ExtResource("10_m1k6j")]
+transform = Transform3D(0.98799944, 0, -0.15445748, 0, 1, 0, 0.15445748, 0, 0.98799944, 14.65486, 11.192368, 8.014308)
+
+[editable path="anotherShop"]
+[editable path="Manivela2"]
+[editable path="examenHabitacion"]

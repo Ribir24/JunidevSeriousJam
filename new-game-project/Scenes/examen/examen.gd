@@ -41,6 +41,7 @@ func _fall():
 
 func _finish():
 	print("FINISHED")
+	get_tree().call_deferred("change_scene_to_file","res://Scenes/Inicio4/inicio_3.tscn")
 
 func _input(event):
 	if event is InputEventMouseMotion:
